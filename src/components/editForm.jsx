@@ -58,10 +58,21 @@ const mapStateToProps = state => {
 }
 
 class EditForm extends Component {
+    onSubmit = e =>{
+        e.preventDefault();
+    }
     render() { 
         return ( 
-            <DispForm animationType={this.props.editStat.animate} zoomStat={this.props.editStat.editStatus}>
-                <FormInnerContent btnName = {"Edit Form"} setWidth = {"85%"}/>
+            <DispForm 
+            animationType={this.props.editStat.animate} 
+            zoomStat={this.props.editStat.editStatus} 
+            >
+                <FormInnerContent 
+                btnName = {"Edit Form"} 
+                setWidth = {"85%"}
+                handleEdit={this.props.handleEdit}
+                handleSubmit={this.onSubmit}
+                />
             </DispForm>
          ); 
     }

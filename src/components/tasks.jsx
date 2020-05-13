@@ -58,13 +58,14 @@ const mapDispatchToProps = dispatch => {
 class Tasks extends Component{
 
     onEdit = () => {
+        console.log("Edit")
         this.props.editStat();
     }
 
     render() {
     return (
         <React.Fragment>
-        {this.props.editStat.editStatus ? <EditForm zoom={this.props.editStat.editStatus} handleEdit={this.onEdit}/> : <EditForm zoom={this.props.editStat.editStatus} handleEdit={this.onEdit}/> }
+        {this.props.editStat.editStatus ? <EditForm zoom={this.props.editStat.editStatus} handleEdit={() => this.props.editStat()}/> : <EditForm zoom={this.props.editStat.editStatus} handleEdit={() => this.props.editStat()}/> }
         <TaskList>
         {this.props.task.map(el => (
             <div key={el.id} style = {{ "paddingTop" : 5, "paddingBottom" : 10, "margin" : 10}}>

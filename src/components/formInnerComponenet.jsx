@@ -89,7 +89,7 @@ class FormInnerContent extends Component {
                     Complete
                 </option>
             </Select>
-            <Button>{this.props.btnName}</Button>
+            <Button onClick={this.props.handleEdit && this.props.handleEdit}>{this.props.btnName}</Button>
         </Form>
         </ ContentArea>
          );
